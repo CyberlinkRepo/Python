@@ -1,6 +1,6 @@
 # Python Exercises
 Repo for Python Walkthoughts class 2022 IAC
-Repo for Python Walkthoughts class 2022 IAC This project consist information on the practical work that has been done on 12 walkthrough exercises on Python fundamentals of the 1st Module Infrastructure as Code (IaC).
+This project consist information on the practical work that has been done on 12 walkthrough exercises on Python fundamentals of the 1st Module Infrastructure as Code (IaC).
 
 Following commands were ran in sequence to push these files from the local computer to the GitHub repo
 
