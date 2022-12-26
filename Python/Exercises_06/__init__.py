@@ -1,0 +1,1 @@
+copyright = "© GLEN GODINHO 2022"

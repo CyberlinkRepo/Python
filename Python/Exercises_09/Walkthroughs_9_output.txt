@@ -1,0 +1,113 @@
+Pylint
+
+a = 1
+b = 2
+c = "GLEN"
+print(a+b)
+print(a+B)
+print(a+c)
+
+output:
+
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_09>C:\Users\L00177561\AppData\Roaming\Python\Python310\Scripts\pylint pylint1.py
+************* Module pylint1
+pylint1.py:6:0: C0304: Final newline missing (missing-final-newline)
+pylint1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pylint1.py:1:0: C0103: Constant name "a" doesn't conform to UPPER_CASE naming style (invalid-name)
+pylint1.py:2:0: C0103: Constant name "b" doesn't conform to UPPER_CASE naming style (invalid-name)
+pylint1.py:3:0: C0103: Constant name "c" doesn't conform to UPPER_CASE naming style (invalid-name)
+pylint1.py:5:8: E0602: Undefined variable 'B' (undefined-variable)
+
+
+
+
+a = 1 - this is numeric valiable now
+b = 2 - same as above
+c = "GLEN" - this is string
+print(a+b) - number + number works
+print(a+b) - same
+print(a+c) - number + string doen't work
+
+
+
+Excersise
+
+pylint2.py
+
+
+A = 1
+B = 2
+C = 'GLEN'
+print(A+B)
+print(B+B)
+print( C + str(A) + str(B) )
+
+
+output: 
+
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_09>C:\Users\L00177561\AppData\Roaming\Python\Python310\Scripts\pylint pylint2.py
+************* Module pylint2
+pylint2.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+
+
+------------------------------------------------------------------
+Your code has been rated at 8.33/10 (previous run: 6.67/10, +1.67)
+
+
+
+Unit Test
+
+
+def convert_upper(my_text):
+ return my_text.upper()
+def convert_lower(my_text):
+ return my_text.lower()
+def convert_capital(my_text):
+ return my_text.capitalize()
+ 
+ print(convert_lower("Glen Godinho"))
+print(convert_upper("Glen Godinho"))
+print(convert_capital("cORK"))
+
+
+
+
+Output:
+
+O:\Python\Exercises_09>python formater.py
+GLEN GODINHO
+Cork
+
+
+
+Building Test 
+
+import unittest
+import formatter
+class TestFormatter(unittest.TestCase):
+ def test_lower(self):
+ test_text = "Glen Godinho"
+ result = formatter.convert_lower(test_text)
+ self.assertEqual(result, "glen godinho")
+ def test_upper(self):
+ test_text = "Glen Godinho"
+ result = formatter.convert_upper(test_text)
+ self.assertEqual(result, "GLEN GODINHO")
+if __name__ =="__main":
+ unittest.main()
+
+
+Output:
+
+O:\Python\Exercises_09>python -m unittest test_formatter.py
+glen godinho
+GLEN GODINHO
+Cork
+..
+----------------------------------------------------
+Ran 2 test in 0.000s
+
+OK
+

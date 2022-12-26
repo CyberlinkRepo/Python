@@ -1,0 +1,173 @@
+"""
+directory_utilities.py
+By: JOR
+Date: 01OCT22
+"""
+import os, platform
+# Define global variables
+current_working_directory = None
+def detect_os()->str:
+ # Detect the OS in use
+ return platform.system()
+def detect_working_directory()->str:
+ # Returns the directory this script was run from
+ return os.getcwd()
+if (__name__ == '__main__'):
+ print(f"This module executes as a standalone script")
+
+ # Check the OS in use, lower case
+ my_os = detect_os()
+ my_os = my_os.lower()
+
+ # Parse the response, only check for Windows and Linux
+ if my_os == "windows":
+  print("Your system is Windows")
+ elif my_os == "linux":
+  print("Your system is Linux")
+ else:
+  print(f"Cannot continue, unidentified system = {my_os}")
+  sys.exit()
+ # Get the current working directory
+ current_working_directory = detect_working_directory()
+ print(f"You are coding in: {current_working_directory}")
+else:
+ print(f"This module is called {__name__} and is being called by another script")
+
+
+Output:
+
+ File "c:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_07\detect_working_directory.py", line 24
+    This module executes as a standalone script
+    Your system is Windows
+    You are coding in: C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_07
+
+
+Added the following function to the above code in create_directoy.py
+
+def create_directory(directory_name: str) ->bool:
+ # Use try/except to catch errors
+ try:
+ # Create the diretory
+ os.mkdir(directory_name)
+ # If this worked, return True
+ return True
+ except:
+ # Give an explicit error message
+ print("Error creating directory {directory_name}")
+ # If this did not work, return False
+ return False
+
+if create_directory("Glen"):
+ print("Creating a directory worked")
+ # Do other stuff
+ else:
+ print("You couldn't create a directory!")
+ # Do other stuff
+
+
+Output:
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_07>python create_directoy.py
+This module executes as a standalone script
+Your system is Windows
+You are coding in: C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_07
+
+
+def create_directory(directory_name: str)->int:
+ # Check to see if the directory already exists
+ if os.path.isdir(directory_name):
+ # The directory already exists
+ return 2
+ else:
+ # Use try/except to catch errors
+ try:
+ # Create the directory
+ os.mkdir(directory_name)
+ # If this worked, return True
+ return 0
+ except:
+ # Give an explicit error message
+ print("Error creating directory {directory_name}")
+ # If this did not work, return False
+ return 1
+
+
+ if create_directory("GLEN") == 0:
+  print("Creating a directory worked")
+ # Do other stuff
+ elif create_directory("GLEN") == 1:
+  print("You couldn't create a directory!")
+ # Do other stuff
+ elif create_directory("GLEN") == 2:
+  print("Directory already existed!")
+ # Do other stuf
+
+
+Logfile.txt 
+
+my_filename = "logfile.txt"
+try:
+ with open(my_filename, "a") as file_handle:
+  print(f"Writing a test line to {my_filename}")
+ file_handle.write("Test line")
+except IOError as err:
+ print(f"IOError was {err}")
+except EOFError as err:
+ print(f"End of file error was {err}")
+except OSError:
+ print("OS Error")
+except:
+ print("General Error")
+else:
+ print("File created")
+finally:
+ print("Finishing up!")
+ # close not needed because with statement
+ # file_handle.close()
+
+Output:Writing a test line to logfile.txt
+General Error
+Finishing up!
+
+
+Input Validation 
+
+ddef validate_integer():
+ # Loop forever
+  while True:
+   try:
+    user_input = int(input(10))
+   except:
+ # Bad value,
+    print("Error")
+   continue
+  else:
+   print("Valid input")
+ # Good value, exit the loop
+   break
+      finally:
+ # Only runs after the except, continue
+    print("10")
+
+validate_integer()
+
+
+
+Raising Exceptions
+
+
+# Take an input number as a string and convert it to an integer
+my_value = int(input("Enter an integer greater than 0"))
+if my_value <= 0:
+ raise Exception("Values must be > 0")
+else:
+ print("Validation checks passed")
+
+
+Output:
+
+Enter an integer greater than 010
+Validation checks passed
+
+
+

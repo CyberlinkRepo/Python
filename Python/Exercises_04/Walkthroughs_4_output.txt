@@ -1,0 +1,258 @@
+Flow Control
+To control the flow of execution in a program, we normally have a condition associated with a block
+of code. There are three main types of conditional statements we will deal with.
+If, Elif and Else
+
+
+Exercise
+
+a=True
+b=True
+c=True
+
+if a:
+   print("a was true")
+elif b:
+    print("b was true")
+elif c:
+    print("c was true")
+else:
+    print("None of our boolean variables were true")   
+
+the output was > a was true
+
+
+
+Ran this code, then:
+1. Set a = False and run, examine the output : the output was > b was true
+2. Set b = False and run, examine the output : the output was > c was true
+3. Set c = False and run, examine the output : the output was > None of our boolean variables were true
+
+
+if(7<4)and(6<9):
+   print("Yup!")
+else:
+    print("Nope!")   
+
+the output was > Nope!
+
+
+
+Loops
+
+iterable_variable = [1,2,3,4,5,6]
+
+for item in iterable_variable:
+    # For each item, excute this code block
+    print(item)
+
+the output was :
+1
+2
+3
+4
+5
+6
+
+
+iterable_variable = [1,2,3,4,5,6]
+
+for item in iterable_variable:
+   if item %2!=0:
+    print(item)
+
+the output was :
+1
+3
+5
+
+
+iterable_variable = [1,2,3,4,5,6]
+total = 0
+
+for item in iterable_variable:
+  total = total + item
+
+print(total)
+
+
+the output was > 21
+
+
+
+ legal variable name
+
+# Define a string to iterate over
+for this_letter in "Glen Godinho":
+ # Specify which letter to test for
+ if this_letter == "G":
+  # Found the test letter
+  print(f"Woo hoo, found a {this_letter}!")
+  # Exit the current loop
+  break
+else:
+ # Didn't find the test letter
+ print(f"Aww man, I didn't want a {this_letter}!")
+
+the output was > Woo hoo, found a G!
+
+
+my_list = [1,2,3,0]
+
+for my_number in my_list:
+  if my_number == 1:
+     pass
+  if my_number == 2:
+     continue
+  if my_number == 3:
+     print(f"Found the number {my_number}")
+  if my_number == 0:
+     break
+
+the output was > Found the number 3
+
+
+
+list_of_tuples = [(1,2), (3,4), ("A", "B")]
+for item in list_of_tuples:
+  print(item)
+
+the output was > 
+(1, 2)
+(3, 4)
+('A', 'B')
+
+
+# Tuple unpacking
+list_of_tuples = [(1,2), (3,4), ("A", "B")]
+for a,b in list_of_tuples:
+  print(a)
+  print(b)
+
+the output was > 
+
+1
+2
+3
+4
+A
+B
+
+
+for index in range(1, 100, 5):
+ print(index)
+
+the output was > 
+1
+6
+11
+16
+21
+26
+31
+36
+41
+46
+51
+56
+61
+66
+71
+76
+81
+86
+91
+96
+
+
+scan = {"192.168.3.10": "80", "192.168.3.11": "443", "192.168.3.55": "22"}
+for ipv4, port in scan.items():
+  print(f"Found a service on {ipv4} at {port}")
+
+the output was >
+Found a service on 192.168.3.10 at 80
+Found a service on 192.168.3.11 at 443
+Found a service on 192.168.3.55 at 22
+
+
+While loops
+
+x = 0
+while x < 10:
+  print(f"X is = {x}")
+  x = x + 1
+else:
+  print(f"As x is now = {x}, we are all finished")
+
+
+the output was > 
+X is = 0
+X is = 1
+X is = 2
+X is = 3
+X is = 4
+X is = 5
+X is = 6
+X is = 7
+X is = 8
+X is = 9
+As x is now = 10, we are all finished
+
+
+my_list = []
+my_string = "Morning Folks!"
+for letter in my_string:
+  my_list.append(letter)
+print(my_list)
+
+the output was > ['M', 'o', 'r', 'n', 'i', 'n', 'g', ' ', 'F', 'o', 'l', 'k', 's', '!']
+
+
+my_string = "Morning Folks!"
+my_list = [letter for letter in my_string]
+print(my_list)
+
+the output was same as above > ['M', 'o', 'r', 'n', 'i', 'n', 'g', ' ', 'F', 'o', 'l', 'k', 's', '!']
+
+
+my_list = [number for number in range(0,20)]
+print(my_list)
+
+the output was > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+
+my_list = [number * 10 for number in range(0,20)]
+print(my_list)
+
+the output was > [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190]
+
+
+
+my_list = [number * 10 for number in range(0,20) if number < 10]
+print(my_list)
+
+the output was > [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+
+
+conversion = 0.3048
+my_depth_in_feet = [12.3, 13.8, 15.3, 12.1, 8.8]
+my_depth_in_meters = [(depth * conversion) for depth in my_depth_in_feet]
+print(my_depth_in_meters)
+
+
+the output was > [3.7490400000000004, 4.20624, 4.6634400000000005, 3.6880800000000002, 2.68224]
+
+
+conversion_Celsius = 274.15
+conversion_Fahrenheit = 255.928
+my_temperature_in_Kelvin = [450, 320, 260, 180]
+my_temperature_in_Celsius = [(temperature * conversion_Celsius) for depth in my_temperature_in_Kelvin]
+my_temperature_in_Fahrenheit = [(temperature * conversion_Fahrenheit) for depth in my_temperature_in_Kelvin]
+print(my_temperature_in_Celsius)
+Print(my_temperature_in_Fahrenheit)
+
+
+
+
+https://www.datainsightonline.com/post/temperature-conversions

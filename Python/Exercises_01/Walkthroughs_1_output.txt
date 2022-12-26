@@ -1,0 +1,264 @@
+Using floating point numbers
+
+C:\Users\L00177561>python
+Python 3.10.5 (tags/v3.10.5:f377153, Jun  6 2022, 16:14:13) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = 0.1
+>>> a = 0.1 + 0.1
+>>> print(a)
+0.2
+>>> a = 0.1 + 0.1 + 0.1
+>>> print(a)
+0.30000000000000004
+>>>
+
+Next excersise 
+
+variable using the = for assignment. I can then use the command print(variable) to see what values I have.
+
+>>> a=400
+>>> print(a)
+400
+
+
+the command print(type(variable)) to see what type a variable is examples of variable data types are : int, float, complex, str and so on as shown in https://docs.python.org/3.0/library/stdtypes.html
+
+>>> a=400
+>>> print(a)
+400
+>>> b=2.134
+>>> print(type(a))
+<class 'int'>
+>>>
+
+
+The None keyword is used to define a null value or no value, it is a data type.
+
+
+>>> a=None
+>>> print(type(a))
+<class 'NoneType'>
+>>>
+
+Python uses dynamic typing, unlike many other languages. We can change the value in a variable from being a number (int) to a string (str). Variable do not have a type, but their values do!
+
+
+>>> dog = 2
+>>> dog
+2
+>>> dog = "mutt"
+>>> dog
+'mutt'
+>>>
+
+
+
+
+Arithmetic Operators
+In mathematics, we can take values which are like variables, and utilize arithmetic operators to perform calculations. For simple calculations,
+
+
+>>>
+>>> 10 * 2 + 3 * 5
+35
+>>> 10 * (2 + 3) * 5
+250
+>>>
+
+
+
+>>> 51/5
+10.2
+>>> 51%5
+1
+
+
+
+
+
+add.py
+
+a = 2+1
+print(a)
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python add.py
+3
+
+
+
+Budget.py
+
+income = 50000
+single_person_tax_allowance = 18400
+taxable_at_20_percent = income - single_person_tax_allowance
+taxable_at_40_percent = income - taxable_at_20_percent
+percent_tax_20 = taxable_at_20_percent * .2
+percent_tax_40 = taxable_at_40_percent * .4
+total_tax = percent_tax_20 + percent_tax_40
+print(total_tax)
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python budget.py
+13680.0
+
+
+
+Slicing.py
+
+a = "Greetings!"
+print(a[0:4:1])
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Slicing.py
+Gree
+
+
+a = "Greetings!"
+print(a[-1:-5:-1])
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Slicing.py
+!sgn
+
+
+
+a = "Greetings!"
+print(a[5])
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Slicing.py
+i
+
+
+a = "John"
+first_letters = a[0:2:1]
+last_letter = a[-1]
+insert_letter = "a"
+b = first_letters + insert_letter + last_letter
+print(b)
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Slicing.py
+Joan
+
+
+first_character = "1"
+second_character = "4"
+a = first_character + second_character
+print(a)
+
+first_number = 1
+second_number = 2
+a = first_number + second_number
+print(a)
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Slicing.py
+14
+3
+
+
+Printing.py
+
+a="Would you like brekkie?"
+
+print("Good Morning, JOR " + a)
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Good Morning, JOR Would you like brekkie?
+
+
+a = 5 
+b = 12
+print("Good Morning, JOR. For breakfast, Would you like {}?".format ("Fruit"))
+print("We have {} apples, {} bananas and a total of {} pices availabe.".format(a, b, a+b))
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Good Morning, JOR. For breakfast, Would you like Fruit?
+We have 5 apples, 12 bananas and a total of 17 pices availabe.
+
+
+
+a = "Good"
+b = "JOR"
+c = "morning"
+print("Message is: {first} {third} {second}".format(first=a, second=c, third=b))
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Message is: Good JOR morning
+
+
+Number = 12345
+Divisor = 333
+Result = Number/Divisor
+print("Result of {} divided by {} is {}".format(Number, Divisor, Result ))
+print("Limiting to a float with 4 decimal places would give {r:1.4f}".format(r=Result))
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Result of 12345 divided by 333 is 37.072072072072075
+Limiting to a float with 4 decimal places would give 37.0721
+
+
+Number = 12345
+Divisor = 333
+Result = Number/Divisor
+print(f"Result of {Number} divided by {Divisor} is {Result}")
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Result of 12345 divided by 333 is 37.072072072072075
+
+
+print("Good morning, JOR")
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Good morning, JOR
+
+
+
+print("Good morning, JOR")
+print("Brekkie")
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Good morning, JOR
+Brekkie
+
+
+
+
+print("Good morning, JOR", end = " ")
+print("Brekkie")
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Good morning, JOR Brekkie
+
+
+
+print("Good morning, JOR\nWould you like brekkie?", )
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+Good morning, JOR
+Would you like brekkie?
+
+
+
+a="Good morning, JOR\nWould you like brekkie?"
+print(len(a))
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Printing.py
+41
+
+
+
+
+
+
+Slicing.py
+
+my_string = "Almost finished now folks!"
+my_upper = my_string.upper()
+my_lower = my_string.lower()
+print(f"Original: {my_string}")
+print(f"Upper: {my_upper}")
+print(f"Lower: {my_lower}")
+
+C:\Users\L00177561\OneDrive - Atlantic TU\Python\Exercises_01>python Slicing.py
+Original: Almost finished now folks!
+Upper: ALMOST FINISHED NOW FOLKS!
+Lower: almost finished now folks!
+
+
+

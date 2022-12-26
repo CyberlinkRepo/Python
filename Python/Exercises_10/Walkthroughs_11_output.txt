@@ -1,0 +1,68 @@
+
+Mytime.py
+
+from datetime import datetime as dt
+# Get the current time, returns a value like 2022-10-09 17:46:45.151666
+today = dt.now()
+print(today)
+# Get Unix time, returns a value like 1665566809.057217
+unix_epoch_time = dt.timestamp(today)
+print(unix_epoch_time)
+
+import datetime
+now = datetime.datetime.now()
+print ("Current date and time : ")
+print (now.strftime("%Y-%m-%d %H:%M:%S"))
+
+
+Output:
+
+c:/Users/L00177561/OneDrive - Atlantic TU/Python/Exercises_10/mytime.py"
+2022-10-23 18:28:47.285897
+1666546127.285897
+Current date and time : 
+2022-10-23 18:28:47
+
+
+Logfiles
+
+""""
+OS utilities, forked from the Comm module of SD-Node, written c. 2017
+Tested with Python >=3.6
+By: JOR
+ v0.1 26AUG21
+"""
+import platform
+def detect_os()->str:
+ # Detect the OS in use
+ return platform.system()
+if (__name__ == '__main__'):
+ print(f"This module is called {__name__} and executes as a standalone script")
+
+ # Check the OS in use, lower case
+ my_os = detect_os()
+ my_os = my_os.lower()
+
+ # Parse the response
+ if my_os == "windows":
+  print("Your system is Windows")
+ elif my_os == "linux":
+  print("Your system is Linux")
+ elif my_os == "darwin":
+  print("Your Apple system is MacOS")
+ elif my_os == "cygwin":
+  print("Your Apple system is MacOS")
+ elif my_os == "aix":
+  print("Your IBM system is AIX")
+ else:
+  print(f"Unidentified system = {my_os}")
+else:
+ pass
+ #print(f"This module is called {__name__} and is being called by another script")
+
+
+Output:
+
+c:/Users/L00177561/OneDrive - Atlantic TU/Python/Exercises_10/os_utilities.py"
+This module is called __main__ and executes as a standalone script
+Your system is Windows
