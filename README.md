@@ -2,6 +2,8 @@
 
 This project consist information on the practical work that has been done on 12 walkthrough exercises on Python fundamentals of the 1st Module Infrastructure as Code (IaC).
 
+Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional
+
 Following commands were ran in sequence to push the scripts files and folders, from the local computer for this project to this GitHub repo.
 
 * Displays the state of the working directory and the staging area.
